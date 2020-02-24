@@ -1,0 +1,18 @@
+<div class= 'bookings_div'>
+  <h2>Movies</h2>
+            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @theaters.each do |thr| %>
+        <tr>
+          <td><%= thr %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

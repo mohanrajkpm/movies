@@ -1,0 +1,16 @@
+<h2>Bookings</h2>
+            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <td><%= booking.ticket_id %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
