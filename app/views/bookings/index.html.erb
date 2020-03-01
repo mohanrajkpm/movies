@@ -11,6 +11,7 @@
         <th>Movie</th>
         <th>Show Time</th>
         <th>User name</th>
+        <th>Cancel</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,10 @@
           		</td>
           		<td><%= booking.screening.show_timing.time%></td>
           		<td><%= booking.user.name%></td>
+              <td><%= link_to 'Delete', 
+                  booking_path(booking), 
+                         method: :delete, 
+                         data: { confirm: t('destroy_msg') } %></td>
       		</tr>
     	<% end %>
     </tbody>

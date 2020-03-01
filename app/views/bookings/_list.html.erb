@@ -9,7 +9,7 @@
     <tbody>
      <% @seats.each do |seat| %>
       <tr>
-          <td>  Seat: <%= f.radio_button :seat_id, seat.id %><br />
+          <td>  <%="Seat :#{seat.id}"%>: <%= f.radio_button :seat_id, seat.id %><br />
           </td>
       </tr>
     <% end %>

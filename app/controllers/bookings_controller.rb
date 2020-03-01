@@ -17,6 +17,12 @@ class BookingsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@booking = Booking.find(params[:id])
+		@booking.destroy
+		redirect_to bookings_path
+	end
+
 	private
 		def booking_params
     		params.require(:booking).permit(:seat_id, :screening_id).merge(user_id: current_user.id)
