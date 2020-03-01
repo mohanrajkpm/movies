@@ -1,3 +1,28 @@
-<div class= 'bookings_div'>
-  <%= render 'list' %>
-</div>
+<%if @screening.present? %>
+	<div class= 'bookings_div'>
+	  <%= render 'list' %>
+	</div>
+<% else %>
+<h2>Bookings</h2>
+  <table class="table">
+    <thead>
+      <tr>
+      	<th>Theatre</th>
+        <th>Movie</th>
+        <th>Show Time</th>
+        <th>User name</th>
+      </tr>
+    </thead>
+    <tbody>
+     	<% @bookings.each do |booking| %>
+      		<tr>
+      			<td><%= booking.screening.show_timing.theatre.name%></td>
+          		<td> <%= booking.screening.movie.name %><br />
+          		</td>
+          		<td><%= booking.screening.show_timing.time%></td>
+          		<td><%= booking.user.name%></td>
+      		</tr>
+    	<% end %>
+    </tbody>
+  </table>
+<% end %>

@@ -1,0 +1,6 @@
+      invoke  active_record
+      create    db/migrate/20200301112356_create_seats.rb
+      create    app/models/seat.rb
+      invoke    test_unit
+      create      test/models/seat_test.rb
+      create      test/fixtures/seats.yml

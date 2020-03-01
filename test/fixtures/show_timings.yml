@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  theatre_id: 1
+  time: MyString
+  fee: 9.99
+
+two:
+  theatre_id: 1
+  time: MyString
+  fee: 9.99

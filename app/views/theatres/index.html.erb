@@ -1,0 +1,24 @@
+<div class= 'bookings_div'>
+  <h2><%= @movie.name%></h2>
+            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Theatres</th>
+        <th>Show time</th>
+        <th>Ticket fee</th>
+        <th>Book/Cancel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @screenings.each do |screen| %>
+        <tr>
+          <td><%= screen.show_timing.theatre.name %></td>
+          <td><%= screen.show_timing.time %></td>
+          <td><%= screen.show_timing.fee.to_s %></td>
+          <td><%= link_to "Booking", bookings_path(screen_id: screen.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

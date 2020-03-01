@@ -8,9 +8,9 @@
       </tr>
     </thead>
     <tbody>
-      <% @theaters.each do |thr| %>
+      <% @movies.each do |mvi| %>
         <tr>
-          <td><%= thr %></td>
+          <td><%= link_to "#{mvi.name}", theatres_path(movie_id: mvi.id) %></td>
         </tr>
       <% end %>
     </tbody>

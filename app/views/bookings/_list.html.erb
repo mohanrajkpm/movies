@@ -1,16 +1,20 @@
 <h2>Bookings</h2>
-            
+     <%= form_for :booking do |f|%> 
   <table class="table">
     <thead>
       <tr>
-        <th>name</th>
+        <th>Book seat</th>
       </tr>
     </thead>
     <tbody>
-      <% @bookings.each do |booking| %>
-        <tr>
-          <td><%= booking.ticket_id %></td>
-        </tr>
-      <% end %>
+     <% @seats.each do |seat| %>
+      <tr>
+          <td>  Seat: <%= f.radio_button :seat_id, seat.id %><br />
+          </td>
+      </tr>
+    <% end %>
+    <%= f.hidden_field :screening_id, value: @screening.id%>
+    <%= f.submit 'Save'%>
     </tbody>
   </table>
+  <% end %>

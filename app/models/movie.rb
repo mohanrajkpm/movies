@@ -1,4 +1,4 @@
 class Movie < ApplicationRecord
-	has_many :timings
-	has_many :theaters, through: :timings
+	has_many :screenings
+	has_many :show_timings, through: :screenings
 end

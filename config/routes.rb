@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :bookings, :movies, :theaters, :tickets, :timings
+  resources :bookings, :movies, :theatres, :timings
+  
   root to: 'bookings#index' 
   devise_for :users
 
