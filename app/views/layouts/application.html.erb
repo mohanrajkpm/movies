@@ -7,11 +7,18 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <% if current_user %>
-    <%= link_to "Bookings", bookings_path %>
-    <%= link_to "Home", movies_path %>
-  	<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-  <% end %>
+
+  <%= nav_bar fixed: :top, brand: "Ninety Ten" do %>
+    <%= menu_group do %>
+        <%= menu_item "Bookings", bookings_path %>
+        <%= menu_item "Home", movies_path %>
+    <% end %>
+    <% if current_user %>
+        <%= menu_item "Log Out", destroy_user_session_path, method: :delete %>
+  
+    <% end %>
+<% end %>
+
 
   <body>
     <%= yield %>

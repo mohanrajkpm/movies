@@ -1,19 +1,37 @@
+
+
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name, class: "form-signin")) do |f| %>
+              <div class="form-label-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email", :id => "inputEmail" %>
+              </div>
 
-<%= render "devise/shared/links" %>
+              <div class="form-label-group">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "password", :id => "inputPassword" %>
+              </div>
+              <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block text-uppercase" %>
+              <hr class="my-4">
+
+           <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render "devise/shared/links" %>
+
+</body>
+
+
